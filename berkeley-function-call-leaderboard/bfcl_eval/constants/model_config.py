@@ -29,6 +29,7 @@ from bfcl_eval.model_handler.api_inference.qwen import (
     QwenAgentThinkHandler,
     QwenAPIHandler,
 )
+from bfcl_eval.model_handler.api_inference.gauss import GaussO4Handler
 from bfcl_eval.model_handler.api_inference.nanbeige import NanbeigeAPIHandler
 from bfcl_eval.model_handler.api_inference.writer import WriterHandler
 from bfcl_eval.model_handler.local_inference.arch import ArchHandler
@@ -1206,6 +1207,16 @@ api_inference_model_map = {
         model_handler=NanbeigeAPIHandler,
         input_price=None,
         output_price=None,
+        is_fc_model=True,
+        underscore_to_dot=True,
+    ),
+    "gauss-o4-FC": ModelConfig(
+        model_name="gauss-o4",
+        display_name="Gauss O4 (FC)",
+        url="Internal",
+        org="Internal",
+        license="Internal",
+        model_handler=GaussO4Handler,
         is_fc_model=True,
         underscore_to_dot=True,
     ),
